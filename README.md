@@ -1,0 +1,1 @@
+A simple and secure Encryption & Decryption tool that helps users protect their data by converting normal text into encrypted format and decrypting it back to readable form. This project demonstrates the fundamentals of Cryptography, Security, and Data Protection.
