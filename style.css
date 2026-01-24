@@ -1,0 +1,312 @@
+/* ===============================
+   Google Font
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ===============================
+   Root Theme (Neon Glass)
+================================ */
+:root{
+    --bg-main: linear-gradient(135deg,#020617,#020617,#020617);
+    --glass-bg: rgba(255,255,255,0.12);
+    --glass-border: rgba(255,255,255,0.25);
+
+    --text-main:#e5e7eb;
+    --text-soft:#9ca3af;
+
+    --neon-blue:#38bdf8;
+    --neon-purple:#a78bfa;
+    --neon-pink:#f472b6;
+    --neon-green:#4ade80;
+    --neon-yellow:#fde047;
+    --neon-orange:#fb923c;
+    --neon-red:#fb7185;
+
+    --btn-gradient: linear-gradient(135deg,#38bdf8,#6366f1,#a78bfa);
+}
+
+/* ===============================
+   Reset
+================================ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Outfit',sans-serif;
+}
+
+/* ===============================
+   Animated Background
+================================ */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at 15% 20%,#1e293b,transparent 45%),
+        radial-gradient(circle at 85% 80%,#312e81,transparent 50%),
+        var(--bg-main);
+    color:var(--text-main);
+    animation:bgHue 18s linear infinite alternate;
+}
+
+/* ===============================
+   Main Container
+================================ */
+.container{
+    width:430px;
+    padding:34px 30px;
+    border-radius:28px;
+    background:var(--glass-bg);
+    backdrop-filter:blur(22px);
+    border:1px solid var(--glass-border);
+    box-shadow:
+        0 0 40px rgba(56,189,248,0.25),
+        0 0 90px rgba(167,139,250,0.15);
+    animation:cardFloat 1s ease;
+}
+
+/* ===============================
+   Heading
+================================ */
+h2{
+    text-align:center;
+    margin-bottom:26px;
+    font-weight:600;
+    letter-spacing:1px;
+    background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple),var(--neon-pink));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 18px rgba(167,139,250,0.4);
+}
+
+/* ===============================
+   Inputs / Textareas / Selects
+================================ */
+textarea,
+select{
+    width:100%;
+    padding:15px 18px;
+    margin-bottom:16px;
+    border-radius:20px;
+    border:none;
+    outline:none;
+    font-size:14px;
+    color:var(--text-main);
+    background:rgba(255,255,255,0.14);
+    transition:all 0.4s ease;
+}
+
+/* ===============================
+   MODE DROPDOWN (Encrypt / Decrypt)
+================================ */
+#mode{
+    background:linear-gradient(135deg,#22c55e,#4ade80);
+    color:#022c22;
+    font-weight:600;
+    box-shadow:0 0 15px rgba(34,197,94,0.45);
+}
+
+#mode option[value="encrypt"]{
+    background:linear-gradient(135deg,#22c55e,#4ade80);
+}
+
+#mode option[value="decrypt"]{
+    background:linear-gradient(135deg,#fb7185,#f43f5e);
+}
+
+/* ===============================
+   METHOD DROPDOWN (All Methods)
+================================ */
+#method{
+    background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));
+    color:#020617;
+    font-weight:600;
+    box-shadow:0 0 15px rgba(56,189,248,0.45);
+}
+
+#method option[value="base64"]{
+    background:linear-gradient(135deg,#38bdf8,#22d3ee);
+}
+
+#method option[value="reverse"]{
+    background:linear-gradient(135deg,#4ade80,#16a34a);
+}
+
+#method option[value="emoji"]{
+    background:linear-gradient(135deg,#fde047,#fb923c,#f472b6);
+}
+
+#method option[value="binary"]{
+    background:linear-gradient(135deg,#67e8f9,#38bdf8);
+}
+
+#method option[value="morse"]{
+    background:linear-gradient(135deg,#c084fc,#a78bfa);
+}
+
+/* ===============================
+   Input Text Area
+================================ */
+#inputText{
+    background:linear-gradient(135deg,rgba(56,189,248,0.35),rgba(34,211,238,0.2));
+    color:#e0f2fe;
+    box-shadow:
+        inset 0 0 0 1px rgba(56,189,248,0.45),
+        0 0 18px rgba(56,189,248,0.25);
+}
+
+#inputText::placeholder{
+    color:#bae6fd;
+}
+
+#inputText:focus{
+    transform:scale(1.04);
+    box-shadow:
+        0 0 0 3px rgba(56,189,248,0.45),
+        0 0 28px rgba(56,189,248,0.6);
+}
+
+/* ===============================
+   Output Text Area
+================================ */
+#outputText{
+    position:relative;
+    background:linear-gradient(135deg,rgba(167,139,250,0.35),rgba(244,114,182,0.25));
+    color:#fdf4ff;
+    box-shadow:
+        inset 0 0 0 1px rgba(244,114,182,0.45),
+        0 0 18px rgba(244,114,182,0.35);
+}
+
+#outputText::placeholder{
+    color:#fbcfe8;
+}
+
+/* Loading animation */
+#outputText.loading{
+    color:transparent;
+}
+
+#outputText.loading::after{
+    content:"✨ Processing...";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    letter-spacing:0.6px;
+    color:var(--text-soft);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+    );
+    background-size:200% 100%;
+    animation:shimmer 1.1s infinite;
+    border-radius:20px;
+}
+
+/* ===============================
+   Buttons
+================================ */
+button{
+    width:100%;
+    margin-top:12px;
+    padding:16px 0;
+    border:none;
+    border-radius:22px;
+    cursor:pointer;
+    font-weight:600;
+    letter-spacing:0.6px;
+    color:#020617;
+    background:var(--btn-gradient);
+    background-size:200% 200%;
+    transition:all 0.45s ease;
+    box-shadow:
+        0 0 20px rgba(99,102,241,0.45),
+        0 0 40px rgba(56,189,248,0.25);
+}
+
+button:hover{
+    background-position:100% 50%;
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:
+        0 0 30px rgba(99,102,241,0.65),
+        0 0 60px rgba(56,189,248,0.45);
+}
+
+/* ===============================
+   History Section
+================================ */
+.history{
+    margin-top:22px;
+    padding-top:14px;
+    border-top:1px solid rgba(255,255,255,0.15);
+}
+
+.history h3{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:14px;
+    color:var(--neon-yellow);
+    text-shadow:0 0 12px rgba(253,224,71,0.6);
+}
+
+.history ul{
+    list-style:none;
+    max-height:160px;
+    overflow-y:auto;
+}
+
+.history li{
+    padding:8px 10px;
+    margin-bottom:6px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
+    font-size:12px;
+    animation:fadeIn 0.4s ease;
+}
+
+/* ===============================
+   Error Message
+================================ */
+.error{
+    margin-top:10px;
+    font-size:13px;
+    text-align:center;
+    color:var(--neon-red);
+    min-height:16px;
+}
+
+/* ===============================
+   Animations
+================================ */
+@keyframes shimmer{
+    0%{background-position:200% 0;}
+    100%{background-position:-200% 0;}
+}
+
+@keyframes cardFloat{
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(0.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes bgHue{
+    from{filter:hue-rotate(0deg);}
+    to{filter:hue-rotate(40deg);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}

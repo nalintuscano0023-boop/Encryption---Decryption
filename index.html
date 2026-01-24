@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encryption & Decryption Project</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🔐 Encryption & Decryption</h2>
+
+    <!-- Mode Dropdown -->
+    <select id="mode">
+        <option value="encrypt">Encryption Mode</option>
+        <option value="decrypt">Decryption Mode</option>
+    </select>
+
+    <!-- Method Dropdown -->
+    <select id="method">
+        <option value="base64">Base64</option>
+        <option value="reverse">Reverse Text</option>
+        <option value="emoji">Emoji Text</option>
+        <option value="binary">Binary Code</option>
+        <option value="morse">Morse Code</option>
+    </select>
+
+    <!-- Input Text -->
+    <textarea id="inputText" rows="4" placeholder="Enter text here..."></textarea>
+
+    <!-- Output Text -->
+    <textarea id="outputText" rows="4" placeholder="Output will appear here..." readonly></textarea>
+
+    <!-- Copy Button -->
+    <button id="copyBtn">📋 Copy to Clipboard</button>
+
+    <!-- Error Message -->
+    <div class="error" id="errorMsg"></div>
+
+    <!-- ===============================
+         History Section
+    ================================ -->
+    <div class="history">
+        <h3>🕒 Last 5 Results</h3>
+
+        <!-- Clear History Button -->
+        <button id="clearHistoryBtn">🗑 Clear History</button>
+
+        <ul id="historyList">
+            <!-- History items will appear here -->
+        </ul>
+    </div>
+</div>
+
+<!-- Link JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
