@@ -1,7 +1,4 @@
-// ===============================
-// Encryption & Decryption Script
-// with History + LocalStorage + Clear History
-// ===============================
+
 
 const inputText       = document.getElementById("inputText");
 const outputText      = document.getElementById("outputText");
@@ -14,9 +11,7 @@ const clearHistoryBtn = document.getElementById("clearHistoryBtn");
 
 const HISTORY_KEY = "encryption_history";
 
-// ===============================
-// Load history on page load
-// ===============================
+
 window.addEventListener("load", loadHistory);
 
 // Live processing (no button click needed)
@@ -36,9 +31,7 @@ clearHistoryBtn.addEventListener("click", () => {
     historyList.innerHTML = "";
 });
 
-// ===============================
-// Emoji Mapping
-// ===============================
+
 const emojiMap = {
     a:"😀", b:"😁", c:"😂", d:"🤣", e:"😃", f:"😄", g:"😅",
     h:"😆", i:"😉", j:"😊", k:"😋", l:"😎", m:"😍",
@@ -50,9 +43,7 @@ const reverseEmojiMap = Object.fromEntries(
     Object.entries(emojiMap).map(([k,v]) => [v,k])
 );
 
-// ===============================
-// Morse Mapping
-// ===============================
+
 const morseMap = {
     a:".-", b:"-...", c:"-.-.", d:"-..", e:".", f:"..-.",
     g:"--.", h:"....", i:"..", j:".---", k:"-.-", l:".-..",
@@ -67,9 +58,7 @@ const reverseMorseMap = Object.fromEntries(
     Object.entries(morseMap).map(([k,v]) => [v,k])
 );
 
-// ===============================
-// Main Logic
-// ===============================
+
 function processText() {
     const text = inputText.value.trim();
     const selectedMode = mode.value;
@@ -126,9 +115,7 @@ function processText() {
     }, 600);
 }
 
-// ===============================
-// History Functions
-// ===============================
+
 function saveToHistory(input, output, method, mode) {
     let history = JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
 
