@@ -19,13 +19,13 @@ window.addEventListener("load", loadHistory);
     el.addEventListener("input", processText);
 });
 
-// Copy to clipboard
+
 copyBtn.addEventListener("click", () => {
     if (!outputText.value) return;
     navigator.clipboard.writeText(outputText.value);
 });
 
-// Clear history
+
 clearHistoryBtn.addEventListener("click", () => {
     localStorage.removeItem(HISTORY_KEY);
     historyList.innerHTML = "";
@@ -127,7 +127,7 @@ function saveToHistory(input, output, method, mode) {
         time: new Date().toLocaleTimeString()
     });
 
-    history = history.slice(0, 5); // keep last 5
+    history = history.slice(0, 5); 
     localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
     renderHistory(history);
 }
