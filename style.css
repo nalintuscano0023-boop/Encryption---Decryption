@@ -1,11 +1,7 @@
-/* ===============================
-   Google Font
-================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* ===============================
-   Root Theme (Neon Glass)
-================================ */
+
 :root{
     --bg-main: linear-gradient(135deg,#020617,#020617,#020617);
     --glass-bg: rgba(255,255,255,0.12);
@@ -25,9 +21,7 @@
     --btn-gradient: linear-gradient(135deg,#38bdf8,#6366f1,#a78bfa);
 }
 
-/* ===============================
-   Reset
-================================ */
+
 *{
     margin:0;
     padding:0;
@@ -35,9 +29,7 @@
     font-family:'Outfit',sans-serif;
 }
 
-/* ===============================
-   Animated Background
-================================ */
+
 body{
     min-height:100vh;
     display:flex;
@@ -51,9 +43,7 @@ body{
     animation:bgHue 18s linear infinite alternate;
 }
 
-/* ===============================
-   Main Container
-================================ */
+
 .container{
     width:430px;
     padding:34px 30px;
@@ -67,9 +57,7 @@ body{
     animation:cardFloat 1s ease;
 }
 
-/* ===============================
-   Heading
-================================ */
+
 h2{
     text-align:center;
     margin-bottom:26px;
@@ -81,9 +69,7 @@ h2{
     text-shadow:0 0 18px rgba(167,139,250,0.4);
 }
 
-/* ===============================
-   Inputs / Textareas / Selects
-================================ */
+
 textarea,
 select{
     width:100%;
@@ -98,9 +84,7 @@ select{
     transition:all 0.4s ease;
 }
 
-/* ===============================
-   MODE DROPDOWN (Encrypt / Decrypt)
-================================ */
+
 #mode{
     background:linear-gradient(135deg,#22c55e,#4ade80);
     color:#022c22;
@@ -116,9 +100,7 @@ select{
     background:linear-gradient(135deg,#fb7185,#f43f5e);
 }
 
-/* ===============================
-   METHOD DROPDOWN (All Methods)
-================================ */
+
 #method{
     background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));
     color:#020617;
@@ -146,9 +128,7 @@ select{
     background:linear-gradient(135deg,#c084fc,#a78bfa);
 }
 
-/* ===============================
-   Input Text Area
-================================ */
+
 #inputText{
     background:linear-gradient(135deg,rgba(56,189,248,0.35),rgba(34,211,238,0.2));
     color:#e0f2fe;
@@ -168,9 +148,7 @@ select{
         0 0 28px rgba(56,189,248,0.6);
 }
 
-/* ===============================
-   Output Text Area
-================================ */
+
 #outputText{
     position:relative;
     background:linear-gradient(135deg,rgba(167,139,250,0.35),rgba(244,114,182,0.25));
@@ -210,9 +188,7 @@ select{
     border-radius:20px;
 }
 
-/* ===============================
-   Buttons
-================================ */
+
 button{
     width:100%;
     margin-top:12px;
@@ -239,9 +215,7 @@ button:hover{
         0 0 60px rgba(56,189,248,0.45);
 }
 
-/* ===============================
-   History Section
-================================ */
+
 .history{
     margin-top:22px;
     padding-top:14px;
@@ -271,9 +245,7 @@ button:hover{
     animation:fadeIn 0.4s ease;
 }
 
-/* ===============================
-   Error Message
-================================ */
+
 .error{
     margin-top:10px;
     font-size:13px;
@@ -282,9 +254,7 @@ button:hover{
     min-height:16px;
 }
 
-/* ===============================
-   Animations
-================================ */
+
 @keyframes shimmer{
     0%{background-position:200% 0;}
     100%{background-position:-200% 0;}
