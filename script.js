@@ -14,7 +14,7 @@ const HISTORY_KEY = "encryption_history";
 
 window.addEventListener("load", loadHistory);
 
-// Live processing (no button click needed)
+
 [inputText, mode, method].forEach(el => {
     el.addEventListener("input", processText);
 });
